@@ -1,0 +1,31 @@
+0:question:Is it a food?::1:2
+1:question:Is it part of my daily diet?:0:3:4
+3:question:Is it a snack?:1:7:8
+4:question:Do I get it often?:1:9:10
+7:question:Is it Asian?:3:11:12
+11:answer:Pocky:7::
+12:answer:Goldfish:7::
+8:question:Can I eat it with anything?:3:17:18
+17:answer:Rice:8::
+18:answer:Instant Ramen:8::
+9:question:Is it a fast food chain?:4:13:14
+13:answer:Taco Bell:9::
+14:answer:Carmelos Tacos:9::
+10:question:Is it expensive?:4:15:16
+15:answer:Haidilao:10::
+16:answer:Spice Bliss:10::
+2:question:Is it a programming language?:0:5:6
+5:question:Is it a language I've tried before?:2:19:20
+6:question:Is it in front of me while I'm writing this right now?:2:27:28
+27:answer:Sriracha Bottle:6::
+28:answer:Ozempic Pills:6::
+19:question:Is it insanely annoying to use?:5:21:22
+20:question:Does it look difficult and intimidating?:5:29:30
+29:answer:Rust:20::
+30:answer:Typescript:20::
+21:question:Do I currently use it now?:19:23:24
+23:answer:C++:21::
+24:answer:PHP:21::
+22:question:Did I learn it recently?:19:25:26
+25:answer:Python:22::
+26:answer:Java:22::
