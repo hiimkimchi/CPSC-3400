@@ -1,0 +1,400 @@
+{
+    "entrance": {
+        "north": "BAT1",
+        "south": "NO",
+        "east": "IT1",
+        "west": "SAFE1",
+        "objects": [
+            {
+                "objID": "PictureOfWife",
+                "interactions": ["TAKE", "THROW", "LOOK"],
+                "description": "A picture of your lovely wife. Survive for her!",
+                "power": 0,
+                "interactionID": [
+                    {"ONTHROW":"Now you lost your only physical memento of your wife for the rest of your time in this warzone. Nice going."}
+                ],
+                "isWeapon": false,
+                "isMed": false
+            },
+            {
+                "objID": "PENCIL",
+                "interactions": ["ATTACK", "TAKE", "THROW", "LOOK"],
+                "description": "A Ticondiroga No. 2 Pencil. Looks yellow. Can be strengthened.",
+                "power": 2,
+                "isWeapon": true,
+                "isMed": false
+            },
+            {
+                "objID": "PencilSharpener",
+                "interactions": ["USE", "LOOK"],
+                "description": "A pencil sharpener. Looks heavy and dusty.",
+                "power": 0,
+                "interactionID": [
+                    {"strengthens":"PENCIL"}
+                ],
+                "isWeapon": false,
+                "isMed": false
+            },
+            {
+                "objID": "BreakRoomDoor",
+                "interactions": ["OPEN", "LOOK"],
+                "description": "A door that leads to your break room. You hear some not so pretty things in there. Perhaps you need a key...",
+                "power": -1,
+                "interactionID": [
+                    {"DOORLINK":"BAT1"}
+                ],
+                "isWeapon": false,
+                "isMed": false
+            }
+        ],
+        "description": "Your lonely undecorated desk. You have 0 morale working for this company.",
+        "isLocked": false
+    },
+
+    "BAT1": {
+        "north": "IT2",
+        "south": "entrance",
+        "east": "NO",
+        "west": "NO",
+        "objects" : [
+            {                
+                "objID": "FORK",
+                "interactions": ["ATTACK", "TAKE", "THROW", "LOOK"],
+                "description": "Your trusty fork! That's where it went! You always eat your instant noodles with this.",
+                "power": 5,
+                "isWeapon": true,
+                "isMed":false
+            },
+            {
+                "objID": "Meatloaf",
+                "interactions": ["THROW", "LOOK"],
+                "description": "This thing is a biohazard. The only thing you can do is throw it. Just throw it. Do it.",
+                "power": 7,
+                "interactionID": [
+                    {"ONTHROW": "The meatloaf was so disgusting that half of JERRY's health is gone."}
+                ],
+                "isWeapon": true,
+                "isMed":false
+            },
+            {
+                "objID": "KNIFE",
+                "interactions": ["ATTACK", "TAKE", "THROW", "LOOK"],
+                "description": "A steak knife. ROBERT from PR is NOT gonna like that this was in the workplace.",
+                "power": 8,
+                "interactionID": [
+                    {"unlocks":"Rope"}
+                ],
+                "isWeapon": true,
+                "isMed":false
+            }
+        ],
+        "enemies" : [
+            {
+                "enemyID": "JERRY",
+                "description": "He was pretty cool. Too bad he turned into a zombie.",
+                "health": 15,
+                "power": 4
+            }
+        ],
+        "description": "This is the break room which consists of a semi-broken fridge, and two tables. How is the meatloaf from last April still out in the corner?",
+        "isLocked": true
+    },
+
+    "IT1" : {
+        "north": "NO",
+        "south": "NO",
+        "east": "NO",
+        "west": "entrance",
+        "objects": [
+            {
+                "objID": "Trophy",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "JERRY's Pickleball trophy. I shouldn't touch that. But I will.\nDoesn't look durable to be a weapon, wonder what I could use it for...",
+                "power": 0,
+                "interactionID": [
+                    {"countdown":"TripleLockedDoor"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "Textbook",
+                "interactions": ["THROW", "LOOK"],
+                "description": "JERRY was reading up on some Python tutorials. huh.",
+                "power": 10000,
+                "interactionID": [
+                    {"ONTHROW":"Oops, you dropped the textbook and killed a poor cockroach."}
+                ],
+                "isWeapon": true,
+                "isMed":false
+            },
+            {
+                "objID": "PROTEINBAR",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "A cookies and cream protein bar! I could eat this. (GAIN 10 HEALTH)",
+                "power": 10,
+                "isWeapon": false,
+                "isMed":true
+            }
+        ],
+        "enemies": [
+            {
+                "enemyID": "COCKROACH",
+                "description": "You know you just wasted your time and energy, but you really hate cockroaches. Its for the best.",
+                "health": 5,
+                "power": 1
+            }
+        ],
+        "description": "It's JERRY's cubicle, wonder if he has anything useful...",
+        "isLocked": false
+    },
+
+    "SAFE1": {
+        "north": "NO",
+        "south": "SECRET",
+        "east": "entrance",
+        "west": "NO",
+        "objects": [
+            {
+                "objID": "SecretDoor",
+                "interactions": ["OPEN", "LOOK"],
+                "description": "Looks like a galvinized steel door that can only be opened by a big red button.",
+                "power": -1,
+                "interactionID": [
+                    {"DOORLINK":"SECRET"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "BRB",
+                "interactions": ["TAKE", "LOOK"],
+                "description": "A big red button. A voice in your head wants to press it real bad. Might be a key to something.",
+                "power": 0,
+                "interactionID": [
+                    {"unlocks":"SecretDoor"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "BreakRoomKey",
+                "interactions": ["TAKE", "LOOK"],
+                "description": "A key to the break room. Janitor must have forgot to unlock it.",
+                "power": 0,
+                "interactionID": [
+                    {"unlocks":"BreakRoomDoor"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "COFFEE",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "A cup of black coffee! I could drink this. (GAIN 20 HEALTH)",
+                "power": 20,
+                "isWeapon": false,
+                "isMed":true
+            }
+        ],
+        "description": "It's the intern's old cubicle. Looks like its zombie free.",
+        "isLocked": false
+    },
+
+    "SECRET": {
+        "north": "SAFE1",
+        "south": "NO",
+        "east": "NO",
+        "west": "NO",
+        "objects": [
+            {
+                "objID": "MEDKIT",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "A medkit with a slurp juice and chug jug. (GAIN FULL HEALTH)",
+                "power": 100,
+                "isWeapon": false,
+                "isMed":true
+            }
+        ],
+        "description": "A guarded room. Your curiosity is increasing by the minute.",
+        "isLocked": true
+    },
+
+    "IT2": {
+        "north": "BAT2",
+        "south": "BAT1",
+        "east": "NO",
+        "west": "NO",
+        "objects": [
+            {
+                "objID": "Jar",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "It's a jar of a mysterious green liquid.\nDoesn't look durable to be a weapon, Wonder what I can use it for...",
+                "power": 0,
+                "interactionID": [
+                    {"countdown":"TripleLockedDoor"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            }
+        ],
+        "enemies": [
+            {
+                "enemyID": "MRSATURN",
+                "description": "I thought this was a zombie game not Onett.",
+                "health": 30,
+                "power": 4
+            }
+        ],
+        "description": "A hallway leading to the HR offices. I hate this area.",
+        "isLocked": false
+    },
+
+    "BAT2": {
+        "north": "LOCK",
+        "south": "IT2",
+        "east": "NO",
+        "west": "BAT3",
+        "objects": [
+            {
+                "objID": "BAT",
+                "interactions": ["ATTACK", "TAKE", "THROW", "LOOK"],
+                "description": "Made of wood but packs more than enough of a punch. I don't know why the HR department has a bat.",
+                "power": 15,
+                "isWeapon": true,
+                "isMed":false
+            },
+            {
+                "objID": "StackOfComplaints",
+                "interactions": ["THROW", "LOOK"],
+                "description": "I bet you half of those are from STEVEN.",
+                "power": 0,
+                "interactionID": [
+                    {"ONTHROW":"That felt real good."}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "PEANUTS",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "Looks like free peanuts from Delta airlines.",
+                "power": 15,
+                "isWeapon": false,
+                "isMed":true
+            }
+        ],
+        "enemies": [
+            {
+                "enemyID": "ROBERT",
+                "description": "That's the last time I get stupid email about \"Stolen Break Room Food\".",
+                "health": 50,
+                "power": 5
+            }
+        ],
+        "description": "It's the HR department. I hope they don't realize I've been taking ROBERT's Cheetos.",
+        "isLocked": false
+    },
+
+    "BAT3": {
+        "north": "NO",
+        "south": "NO",
+        "east": "BAT2",
+        "west": "IT3",
+        "objects": [
+            {
+                "objID": "Plaque",
+                "interactions": ["USE", "LOOK"],
+                "description": "The boss's name plaque. Would be a shame if I were to strengthen a weapon on it. Specifically one that I found in the Break Room.",
+                "power": 0,
+                "interactionID": [
+                    {"strengthens":"KNIFE"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            },
+            {
+                "objID": "Rope",
+                "interactions": ["OPEN", "LOOK"],
+                "description": "A rope blocking your path to the mysterious room. Perhaps you need a sharp object...",
+                "power": -1,
+                "interactionID": [
+                    {"DOORLINK":"IT3"}
+                ],
+                "isWeapon": false,
+                "isMed": false
+            }
+        ],
+        "enemies": [
+            {
+                "enemyID": "YOURBOSS",
+                "description": "I technically can't get fired. Unless twice dead zombies can do administrative work.",
+                "health": 100,
+                "power": 8
+            }
+        ],
+        "description": "It's the boss's room. Looks like he's hiding something in the room next to it...",
+        "isLocked": false
+    },
+
+    "IT3": {
+        "north": "NO",
+        "south": "NO",
+        "east": "BAT3",
+        "west": "NO",
+        "objects": [
+            {
+                "objID": "Excalibur",
+                "interactions": ["USE", "TAKE", "LOOK"],
+                "description": "It's the fabled sword but it doesn't work for killing. We're losing the plot at this point.\nDoesn't look durable enough to be a weapon, Wonder what I can use it for...",
+                "power": 0,
+                "interactionID": [
+                    {"countdown":"TripleLockedDoor"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            }
+        ],
+        "enemies": [
+            {
+                "enemyID": "GIANTSNAKE",
+                "description": "Called it.",
+                "health": 75,
+                "power": 15
+            }
+        ],
+        "description": "A room with many secrets. Maybe there's a giant snake down here with Draco Malfoy too.",
+        "isLocked": true
+    },
+
+    "LOCK": {
+        "north": "exit",
+        "south": "BAT2",
+        "east": "NO",
+        "west": "NO",
+        "objects" : [
+            {
+                "objID": "TripleLockedDoor",
+                "interactions": ["OPEN", "LOOK"],
+                "description": "Looks like a triple locked door with peculiar lock holes.",
+                "power": 3,
+                "interactionID": [
+                    {"DOORLINK":"exit"}
+                ],
+                "isWeapon": false,
+                "isMed":false
+            }
+        ],
+        "description":"A room with a locked door. It has 3 keyholes that look very peculiar...\nA trophy pedestal, an empty bowl, and a swordless stone.",
+        "isLocked":false
+    },
+
+    "exit": {
+        "north": "NO",
+        "south": "LOCK",
+        "east": "NO",
+        "west": "NO",
+        "description":"You beat the game. You aren't supposed to see this message.",
+        "isLocked":true
+    }
+}
