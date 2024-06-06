@@ -1,0 +1,8 @@
+
+### Requirements For Running Perl Programs
+1. Install Perl on your machine, or use CS1 Server
+2. **To run a Perl program**:
+- Perform this command on your terminal
+```
+	perl file.pl
+```
